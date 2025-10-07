@@ -1,4 +1,4 @@
-export const containerVariants = {
+export const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -9,7 +9,7 @@ export const containerVariants = {
     }
 }
 
-export const itemVariants = {
+export const itemVariants: any = {
     hidden: { y:30, opacity: 0},
     visible: {
         y: 0,
@@ -21,7 +21,7 @@ export const itemVariants = {
     }
 }
 
-export const imageVariants = {
+export const imageVariants: any = {
         hidden: { x: 50, opacity: 0 },
         visible: {
             x: 0,
@@ -34,7 +34,7 @@ export const imageVariants = {
         }
     }
 
-export const textVariants = {
+export const textVariants: any = {
     hidden: { y: 20, opacity: 0 },
     visible: {
         y: 0,
@@ -46,7 +46,7 @@ export const textVariants = {
     }
 }
 
-export const skillBarVariants = {
+export const skillBarVariants: any = {
     hidden: { width: 0, opacity: 0 },
     visible: (level: any) => ({
         width: `${level}%`,
