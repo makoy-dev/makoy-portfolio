@@ -1,15 +1,17 @@
-export const containerVariants: any = {
+import { Variants } from "framer-motion";
+
+export const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
         transition: {
-            staggerChilder: 0.2,
+            staggerChildren: 0.2,
             delayChildren: 0.3
         }
     }
 }
 
-export const itemVariants: any = {
+export const itemVariants: Variants = {
     hidden: { y:30, opacity: 0},
     visible: {
         y: 0,
@@ -21,7 +23,7 @@ export const itemVariants: any = {
     }
 }
 
-export const imageVariants: any = {
+export const imageVariants: Variants = {
         hidden: { x: 50, opacity: 0 },
         visible: {
             x: 0,
@@ -34,7 +36,7 @@ export const imageVariants: any = {
         }
     }
 
-export const textVariants: any = {
+export const textVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
         y: 0,
@@ -46,7 +48,7 @@ export const textVariants: any = {
     }
 }
 
-export const skillBarVariants: any = {
+export const skillBarVariants: Variants = {
     hidden: { width: 0, opacity: 0 },
     visible: (level: any) => ({
         width: `${level}%`,
