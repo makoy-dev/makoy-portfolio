@@ -339,7 +339,7 @@ export default function Hero() {
                             className="flex justify-center lg:justify-end"
                         >
                             <div className="relative">
-                                {/* Tech Stack Desktopx */}
+                                {/* Tech Stack Desktop */}
                                 <motion.div
                                     variants={itemVariants}
                                     className="flex items-center space-x-8 text-xs uppercase tracking-widest absolute -top-16 -left-28"
