@@ -46,6 +46,19 @@ export const textVariants = {
     }
 }
 
+export const skillBarVariants = {
+    hidden: { width: 0, opacity: 0 },
+    visible: (level: any) => ({
+        width: `${level}%`,
+        opacity: 1,
+        transition: {
+            duration: 1.2,
+            ease: "easeOut" as const,
+            delay: 0.3
+        }
+    })
+}
+
 export const scrollToSection = (sectionId: string) => {
 
     const element = document.getElementById(sectionId)
