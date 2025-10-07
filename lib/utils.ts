@@ -50,7 +50,7 @@ export const textVariants: Variants = {
 
 export const skillBarVariants: Variants = {
     hidden: { width: 0, opacity: 0 },
-    visible: (level: any) => ({
+    visible: (level: string) => ({
         width: `${level}%`,
         opacity: 1,
         transition: {
