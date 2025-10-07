@@ -41,7 +41,7 @@ export default function DesktopHero() {
                     className={`text-xl text-gray-400 mb-12 font-light leading-relaxed max-w-lg`}
                 >
                     I craft beautiful, functional web applications with modern
-                    technologies and thoughtfull user experiences
+                    technologies and thoughtful user experiences
                 </motion.p>
                 <motion.div variants={itemVariants} className="flex gap-6 mb-8">
                     <motion.button
