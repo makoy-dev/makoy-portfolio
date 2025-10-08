@@ -23,7 +23,7 @@ export default function ProjectCard({
     index: number;
 }) {  
 
-    console.log(project.image)
+    
     return (
         <motion.div
             variants={cardVariants}
@@ -92,7 +92,7 @@ export default function ProjectCard({
                     <h3 className="text-xl font-medium mb-3 group-hover:text-blue-500 transition-colors">{ project.title }</h3>
                     <p className="text-sm leading-relaxed mb-4 text-gray-400">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag: any, tagIndex: number) => (
+                        {project.tags.map((tag: string, tagIndex: number) => (
                             <span
                                 key={tagIndex}
                                 className="text-xs px-3 py-1 rounded-full bg-gray-800 text-gray-300"
