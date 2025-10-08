@@ -1,4 +1,16 @@
-import { Code2, Server, Database, Cloud } from "lucide-react"
+import { 
+    Code2, 
+    Server, 
+    Database, 
+    Cloud,
+    GraduationCap,
+    Briefcase,
+    Heart,
+    Coffee,
+    BookOpen,
+    Mail
+ } from "lucide-react"
+ import { FiGithub, FiLinkedin } from "react-icons/fi"
 
 export const SKILLS_CATEGORY = [
     {
@@ -84,5 +96,82 @@ export const PROJECTS = [
         githubUrl: "#",
         featured: false,
         category: "Web App"
+    }
+]
+
+export const JOURNEY_STEPS = [
+    {
+        year: "2019",
+        title: "Bachelor of Science in Information Technology",
+        company: "STI College of Iloilo",
+        description: "A results-oriented Information Technology graduate recognized as the Programmer of the Year and Outstanding Thesis Awardee. Skilled in software development, database management, and systems analysis, with a strong commitment to writing clean, efficient, and innovative code. Passionate about solving complex technical problems and developing solutions that enhance user experience and business performance.",
+        icon: GraduationCap,
+        color: "bg-purple-500"
+    },
+    {
+        year: "2019 - 2024",
+        title: "Full-stack developer",
+        company: "Callbox, Inc",
+        description: "Designed, developed, and maintained full-stack web applications using PHP, Laravel, React, JavaScript, Tailwind CSS, HTML, and CSS.",
+        icon: Briefcase,
+        color: "bg-orange-500"
+    },
+    {
+        year: "2021 - 2022",
+        title: "Full-stack developer",
+        company: "West Acton (Part-time)",
+        description: "Developed and maintained full-stack web applications as part of a collaborative development team.",
+        icon: Briefcase,
+        color: "bg-blue-500"
+    },
+    {
+        year: "2024 - Present",
+        title: "Full-stack developer",
+        company: "Tyme Global Technologies, Inc",
+        description: " Develop, maintain, and optimize full-stack web applications using React, NextJS, Laravel, HTML, CSS, Tailwind, and PostgreSQL.",
+        icon: Briefcase,
+        color: "bg-cyan-500"
+    }
+]
+
+export const PASSIONS = [
+    {
+        icon: Heart,
+        title: "User Experience",
+        description: "Crafting intuitive interfaces that users love"
+    },
+    {
+        icon: Coffee,
+        title: "Problem Solving",
+        description: "Turning complex challenges into elegant solutions"
+    },
+    {
+        icon: BookOpen,
+        title: "Continuous learning",
+        description: "Always exploring new technologies and best practices"
+    }
+]
+
+export const SOCIAL_LINKS = [
+    {
+        name: "GitHub",
+        icon: FiGithub,
+        url: "#",
+        color: "hover:text-gray-400",
+        bgColor: "hover:bg-gray-800"
+    },
+    {
+        name: "LinkedIn",
+        icon: FiLinkedin,
+        url: "#",
+        color: "hover:text-blue-400",
+        bgColor: "hover:bg-blue-500/10"
+    },
+    {
+        name: "Email",
+        icon: Mail,
+        url: "mailto:khristiancamena@gmail.com",
+        color: "hover:text-green-400",
+        bgColor: "hover:bg-green-500/10"
     }
 ]
