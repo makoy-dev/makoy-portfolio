@@ -166,6 +166,22 @@ export default function Footer() {
                                 Built with NextJS & Framer Motion
                             </p>
                         </motion.div>
+
+                        <motion.div variants={itemVariants}>
+                            <motion.button
+                                onClick={scrollToTop}
+                                className="inline-flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-gray-800/50 hover:bg-gray-700/50 text-gray-400 hover:text-white bacakdrop-blur-sm border border-gray-700"
+                                whileHover={{
+                                    y: -2,
+                                    scale: 1.05,
+                                    boxShadow: "0 10px 25px rgba(59, 130, 246, 0.15"
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <ArrowUp size={16} />
+                                <span>Back to top</span>
+                            </motion.button>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
