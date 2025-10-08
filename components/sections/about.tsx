@@ -85,7 +85,7 @@ export default function About() {
                             <p
                                 className="text-base leading-relaxed text-gray-400"
                             >
-                                When I'm not coding, you'll find me exploring new frameworks, watch movies, play guitar and explore nature.
+                                When I&apos;m not coding, you&apos;ll find me exploring new frameworks, watch movies, play guitar and explore nature.
                             </p>
                         </motion.div>
                         <motion.div
@@ -199,7 +199,7 @@ export default function About() {
                             whileTap={{ scale: 1.98 }}
                             className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300"
                         >
-                            Let's Work Together
+                            Let&apos;s Work Together
                         </motion.button>
                     </motion.div>
                 </motion.div>
