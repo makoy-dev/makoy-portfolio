@@ -34,6 +34,7 @@ export default function ContactForm() {
             ...formData,
             [key]: value
         })
+
     }
 
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -111,13 +112,13 @@ export default function ContactForm() {
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <TextInput
                                             value={formData.name}
-                                            handleInputChange={(text: string) => handleInputChange("name", text)}
+                                            handleInputChange={handleInputChange}
                                             label="Your Name"
                                             input_key="name"
                                         />
                                         <TextInput
                                             value={formData.email}
-                                            handleInputChange={(text: string) => handleInputChange("email", text)}
+                                            handleInputChange={handleInputChange}
                                             label="Email Address"
                                             input_key="email"
                                         />
@@ -125,7 +126,7 @@ export default function ContactForm() {
                                     <TextInput
                                         value={formData.message}
                                         textarea
-                                        handleInputChange={(text: string) => handleInputChange("message", text)}
+                                        handleInputChange={handleInputChange}
                                         label="Your Message"
                                         input_key="message"
                                     />
