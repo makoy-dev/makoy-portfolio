@@ -113,11 +113,13 @@ export default function ContactForm() {
                                             value={formData.name}
                                             handleInputChange={(text: string) => handleInputChange("name", text)}
                                             label="Your Name"
+                                            input_key="name"
                                         />
                                         <TextInput
                                             value={formData.email}
                                             handleInputChange={(text: string) => handleInputChange("email", text)}
                                             label="Email Address"
+                                            input_key="email"
                                         />
                                     </div>
                                     <TextInput
@@ -125,6 +127,7 @@ export default function ContactForm() {
                                         textarea
                                         handleInputChange={(text: string) => handleInputChange("message", text)}
                                         label="Your Message"
+                                        input_key="message"
                                     />
                                     <motion.button
                                         disabled={isSubmitting}
