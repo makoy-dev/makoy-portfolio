@@ -3,15 +3,17 @@ import Hero from "@/components/sections/hero";
 import Skills from "@/components/sections/skills";
 import Projects from "@/components/sections/projects";
 import About from "@/components/sections/about";
+import ContactForm from "@/components/sections/contact-form";
 
 export default function Home() {
     return (
         <>
-            <div className="pb-[100vh]">
+            <div>
                 <Hero />
                 <Skills />
                 <Projects />
                 <About />
+                <ContactForm />
             </div>            
         </>
     );
