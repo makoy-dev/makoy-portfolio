@@ -3,11 +3,23 @@ import { motion } from "framer-motion"
 import { ExternalLink } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { cardVariants } from "@/lib/utils";
+
+type Project = {
+    id: number,
+    title: string,
+    description: string,
+    image: string,
+    tags: string[],
+    liveUrl: string,
+    githubUrl: string,
+    featured: boolean,
+    category: string
+};
 export default function ProjectCard({
     project,
     index,
 }: {
-    project: any;
+    project: Project;
     index: number;
 }) {  
 
