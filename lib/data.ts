@@ -61,3 +61,28 @@ export const STATS = [
     { number: "20+", label: "Technologies" },
     { number: "100%", label: "Client Satisfaction" }
 ]
+
+export const PROJECTS = [
+    {
+        id: 1,
+        title: "E-Commerce Platform",
+        description: "A full-stack e-commerce solution with advanced filtering and payment integration",
+        image: "/images/profpic.png",
+        tags: ["React", "Tailwind", "Laravel"],
+        liveUrl: "#",
+        githubUrl: "#",
+        featured: false,
+        category: "Full Stack"
+    },
+    {
+        id: 2,
+        title: "Task Management App",
+        description: "A Collaborative project management tool",
+        image: "/images/profpic.png",
+        tags: ["Next.js", "TypeScript", "Tailwind"],
+        liveUrl: "#",
+        githubUrl: "#",
+        featured: false,
+        category: "Web App"
+    }
+]
