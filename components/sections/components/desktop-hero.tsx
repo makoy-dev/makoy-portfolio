@@ -68,7 +68,7 @@ export default function DesktopHero() {
                 >
                     {[
                         { icon: FiGithub, href: "#" },
-                        { icon: FiLinkedin, href: "#" },
+                        { icon: FiLinkedin, href: "https://www.linkedin.com/in/makoy-came%C3%B1a-14a42312b/" },
                         { icon: Mail, href: "#" },
                     ].map((social, index) => (
                         <motion.a

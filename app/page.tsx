@@ -10,7 +10,7 @@ export default function Home() {
             <div className="pb-[100vh]">
                 <Hero />
                 <Skills />
-                <Projects />
+                {/* <Projects /> */}
                 <About />
             </div>            
         </>
