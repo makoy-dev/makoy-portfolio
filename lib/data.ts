@@ -8,7 +8,9 @@ import {
     Heart,
     Coffee,
     BookOpen,
-    Mail
+    Mail,
+    MapPin,
+    Phone
  } from "lucide-react"
  import { FiGithub, FiLinkedin } from "react-icons/fi"
 
@@ -153,13 +155,13 @@ export const PASSIONS = [
 ]
 
 export const SOCIAL_LINKS = [
-    {
-        name: "GitHub",
-        icon: FiGithub,
-        url: "#",
-        color: "hover:text-gray-400",
-        bgColor: "hover:bg-gray-800"
-    },
+    // {
+    //     name: "GitHub",
+    //     icon: FiGithub,
+    //     url: "#",
+    //     color: "hover:text-gray-400",
+    //     bgColor: "hover:bg-gray-800"
+    // },
     {
         name: "LinkedIn",
         icon: FiLinkedin,
@@ -173,5 +175,23 @@ export const SOCIAL_LINKS = [
         url: "mailto:khristiancamena@gmail.com",
         color: "hover:text-green-400",
         bgColor: "hover:bg-green-500/10"
+    }
+]
+
+export const CONTACT_INFO = [
+    {
+        icon: MapPin,
+        label: "Location",
+        value: "Iloilo, Philippines"
+    },
+    {
+        icon: Mail,
+        label: "Email",
+        value: "khristiancamena@gmail.com"
+    },
+    {
+        icon: Phone,
+        label: "Phone",
+        value: "+639297421061"
     }
 ]
