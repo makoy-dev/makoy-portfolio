@@ -61,6 +61,18 @@ export const skillBarVariants: Variants = {
     })
 }
 
+export const cardVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut" as const
+        }
+    }
+}
+
 export const scrollToSection = (sectionId: string) => {
 
     const element = document.getElementById(sectionId)
