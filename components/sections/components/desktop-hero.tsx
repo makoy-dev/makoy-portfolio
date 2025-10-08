@@ -67,7 +67,7 @@ export default function DesktopHero() {
                     className="flex space-x-6 mb-12"
                 >
                     {[
-                        { icon: FiGithub, href: "#" },
+                        // { icon: FiGithub, href: "#" },
                         { icon: FiLinkedin, href: "https://www.linkedin.com/in/makoy-came%C3%B1a-14a42312b/" },
                         { icon: Mail, href: "#" },
                     ].map((social, index) => (
