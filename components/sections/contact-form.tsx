@@ -7,8 +7,13 @@ import { CONTACT_INFO, SOCIAL_LINKS } from "@/lib/data";
 import { containerVariants, itemVariants } from "@/lib/utils";
 import TextInput from "../input/text-input";
 import SuccessModal from "./components/success-modal";
+import emailjs from 'emailjs-com'
 
 export default function ContactForm() {  
+
+    const TEMPLATE_ID = "template_fl15lwd"
+    const SERVICE_ID = "service_ltywa7n"
+    const PUB_KEY = "TqhyjczcrpplPoZYN"
 
     const [ formData, setFormData ] = useState({
         name: "",
@@ -42,14 +47,39 @@ export default function ContactForm() {
         e.preventDefault()
         setIsSubmitting(true)
 
-        await new Promise((resolve) => setTimeout(resolve, 1000))
+        // await new Promise((resolve) => setTimeout(resolve, 1000))
+
+        const newForm = toHtmlForm()
+
+        await emailjs.sendForm(
+            SERVICE_ID,
+            TEMPLATE_ID,
+            newForm,
+            PUB_KEY
+        )
+        .then(() => setShowSuccess(false))
+        .catch(() => alert("Failed to send message"));
 
         setIsSubmitting(false)
         setShowSuccess(true)
         setFormData({ name: "", email: "", message: "" })
 
-        setTimeout(() => setShowSuccess(false), 3000)
+        // setTimeout(() => setShowSuccess(false), 3000)
 
+    }
+
+    const toHtmlForm = () => {
+        const form = document.createElement("form");
+
+        Object.entries(formData).forEach(([key, value]) => {
+            const input = document.createElement("input");
+            input.type = "hidden";
+            input.name = key;
+            input.value = value;
+            form.appendChild(input);
+        });
+
+        return form
     }
 
     return (
