@@ -53,7 +53,7 @@ export const SKILLS_CATEGORY = [
             { name: "Vercel", level: 90, color: "bg-blue-600" },
             { name: "Heroku", level: 90, color: "bg-orange-600" },
             { name: "Git", level: 95, color: "bg-purple-600" },
-            { name: "CD/CD", level: 75, color: "bg-graay-900" },
+            { name: "CD/CD", level: 75, color: "bg-red-900" },
         ]
     }
 ]
@@ -70,8 +70,8 @@ export const TECH_STACK = [
 export const STATS = [
     // { number: "50+", label: "Projects Completed" }
     { number: "5+", label: "Years Experience" },
-    { number: "20+", label: "Technologies" },
-    { number: "100%", label: "Client Satisfaction" }
+    // { number: "20+", label: "Technologies" },
+    // { number: "100%", label: "Client Satisfaction" }
 ]
 
 export const PROJECTS = [

@@ -101,6 +101,7 @@ export default function MobileHero() {
                             href={social.href}
                             whileHover={{ y: -3, scale: 1.1 }}
                             className={`p-3 rounded-full transition-colors text-gray-400 hover:text-white hover:bg-gray-800`}
+                            target="_blank"
                         >
                             <social.icon size={20} />
                         </motion.a>

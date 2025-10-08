@@ -32,7 +32,7 @@ export default function Projects() {
                     variants={containerVariants}
                     className="text-center mb-20"
                 >
-                    <motion.div
+                    {/* <motion.div
                         variants={itemVariants}
                         className="text-sm uppercase tracking-widest text-gray-500 mb-4"
                     >
@@ -49,10 +49,16 @@ export default function Projects() {
                         className="text-lg text-gray-400 max-w-2xl mx-auto font-light"
                     >
                         A collection of projects that showcase my expertise in building modern web applications and solving complex problems.
-                    </motion.p>
+                    </motion.p> */}
+                    <motion.h2
+                        variants={itemVariants}
+                        className="text-3xl md:text-5xl font-light mb-6"
+                    >
+                        Projects coming <span className="text-blue-500 font-medium">Soon</span>
+                    </motion.h2>
                 </motion.div>
                 {/* Projects Grid */}
-                <motion.div
+                {/* <motion.div
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={containerVariants}
@@ -61,7 +67,7 @@ export default function Projects() {
                     {PROJECTS.map((project, index) => (
                         <ProjectCard key={project.id} project={project} index={index} />
                     ))}
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     )

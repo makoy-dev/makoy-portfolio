@@ -19,7 +19,7 @@ export default function Navbar() {
 
     const [ isMenuOpen, setIsMenuOpen ] = useState<boolean>(false)
 
-    const links = ["Home", "Skills", /* "Work",  */"About", "Contact"]
+    const links = ["Home", "Skills", "Work", "About", "Contact"]
 
     const scrollToSection = (sectionId: string) => {
 

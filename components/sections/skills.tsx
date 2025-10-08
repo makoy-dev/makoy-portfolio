@@ -155,11 +155,11 @@ export default function Skills() {
                         </motion.div>
                     </motion.div>
                     {/* Stats */}
-                    <motion.div
+                    {/* <motion.div
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
                         variants={containerVariants}
-                        className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-8"
+                        className={`mt-20 grid grid-cols-2 md:grid-cols-${STATS.length} gap-8`}
                     >
                         {STATS.map((stat, index) => (
                             <motion.div
@@ -175,7 +175,7 @@ export default function Skills() {
                                 </div>
                             </motion.div>
                         ))}
-                    </motion.div>
+                    </motion.div> */}
 
                 </div>
             </section>
