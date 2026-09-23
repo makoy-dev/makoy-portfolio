@@ -7,9 +7,19 @@ import { PROJECTS } from "@/lib/data";
 const project = PROJECTS.find((item) => item.slug === "acosa-accounting-app")!;
 
 export const metadata: Metadata = {
-    title: "ACOSA Accounting App — Makoy Cameña",
+    title: "ACOSA Accounting App",
     description:
-        "A case study of ACOSA Accounting App, a connected accounting operations platform built with Laravel and React.",
+        "Explore ACOSA Accounting App, a live accounting operations platform built by Makoy Cameña with Laravel and React.",
+    alternates: {
+        canonical: "/projects/acosa-accounting-app",
+    },
+    openGraph: {
+        type: "website",
+        url: "/projects/acosa-accounting-app",
+        title: "ACOSA Accounting App — Makoy Cameña",
+        description:
+            "A live accounting operations platform built by Makoy Cameña with Laravel and React.",
+    },
 };
 
 export default function AcosaAccountingAppPage() {
