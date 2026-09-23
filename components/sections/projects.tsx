@@ -1,75 +1,41 @@
-"use client"
-import { useRef } from "react";
-import { motion, useInView } from 'framer-motion'
-import { ArrowUpRight, Code2, Globe, Zap, Users } from "lucide-react";
-import { containerVariants, itemVariants } from "@/lib/utils";
-import { PROJECTS } from "@/lib/data";
-import ProjectCard from "./components/project-card";
-export default function Projects() { 
+"use client";
 
-    const sectionRef = useRef(null)
-    const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { PROJECTS } from "@/lib/data";
+import { containerVariants } from "@/lib/utils";
+import SectionHeading from "@/components/ui/section-heading";
+import ProjectCard from "./components/project-card";
+
+export default function Projects() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
     return (
-        <section
-            id="work"
-            ref={sectionRef}
-            className="py-24 px-6 bg-gray-950 text-white relative overflow-hidden"
-        >
-            <div className="absolute inset-0 overflow-hidden">
-                <div 
-                    className="absolute top-20 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-5 bg-blue-500"
+        <section id="work" ref={sectionRef} className="section-shell border-y border-white/[0.06]">
+            <div className="mx-auto max-w-7xl">
+                <SectionHeading
+                    eyebrow="Selected work"
+                    title="Work that starts with the problem, not the technology."
+                    description="A growing collection of products built around useful workflows, maintainable systems, and clear user experiences."
                 />
-                <div
-                    className="absolute bottom-20 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-5 bg-purple-500"
-                />
-            </div>
-            <div className="max-w-7xl mx-auto relative z-10">
-                {/* Section Header */}
+
                 <motion.div
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={containerVariants}
-                    className="text-center mb-20"
-                >
-                    {/* <motion.div
-                        variants={itemVariants}
-                        className="text-sm uppercase tracking-widest text-gray-500 mb-4"
-                    >
-                        Featured Work
-                    </motion.div>
-                    <motion.h2
-                        variants={itemVariants}
-                        className="text-3xl md:text-5xl font-light mb-6"
-                    >
-                        Recent <span className="text-blue-500 font-medium">Projects</span>
-                    </motion.h2>
-                    <motion.p
-                        variants={itemVariants}
-                        className="text-lg text-gray-400 max-w-2xl mx-auto font-light"
-                    >
-                        A collection of projects that showcase my expertise in building modern web applications and solving complex problems.
-                    </motion.p> */}
-                    <motion.h2
-                        variants={itemVariants}
-                        className="text-3xl md:text-5xl font-light mb-6"
-                    >
-                        Projects coming <span className="text-blue-500 font-medium">Soon</span>
-                    </motion.h2>
-                </motion.div>
-                {/* Projects Grid */}
-                {/* <motion.div
-                    initial="hidden"
-                    animate={isInView ? "visible" : "hidden"}
-                    variants={containerVariants}
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="mt-14 grid gap-6 lg:grid-cols-2"
                 >
                     {PROJECTS.map((project, index) => (
                         <ProjectCard key={project.id} project={project} index={index} />
                     ))}
-                </motion.div> */}
+                </motion.div>
+
+                <p className="mt-8 max-w-2xl text-sm leading-6 text-slate-500">
+                    Detailed project write-ups are being prepared. Each case study will cover
+                    the problem, decisions, implementation, and outcome—not just screenshots.
+                </p>
             </div>
         </section>
-    )
-
+    );
 }

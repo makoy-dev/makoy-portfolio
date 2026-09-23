@@ -1,24 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Makoy's Website",
-  description: "My Portfolio",
+  title: "Makoy Cameña — Full-stack Developer",
+  description:
+    "Portfolio of Makoy Cameña, a full-stack developer building clear, reliable digital products with React, Next.js, Laravel, and TypeScript.",
 };
 
 export default function RootLayout({
@@ -27,10 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${inter.className} antialiased`}
-      >
+    <html lang="en">
+      <body>
         <Navbar />
         {children}
         <Footer />

@@ -1,32 +1,54 @@
-
+type TextInputProps = {
+    value: string;
+    handleInputChange: (key: string, value: string) => void;
+    textarea?: boolean;
+    label: string;
+    inputKey: string;
+    type?: "text" | "email";
+};
 
 export default function TextInput({
     value,
     handleInputChange,
-    textarea,
+    textarea = false,
     label,
-    input_key
-}: {
-    value: string;
-    handleInputChange: (key: string, value: string) => void;
-    textarea?: boolean;
-    label: string
-    input_key: string;
-}) {
-
-    const InputComponent = textarea ? "textarea" : "input"
+    inputKey,
+    type = "text",
+}: TextInputProps) {
+    const sharedClasses =
+        "peer w-full rounded-xl border border-white/10 bg-slate-950/50 px-4 pb-3 pt-7 text-white outline-none transition placeholder:text-transparent focus:border-cyan-300/60 focus:bg-slate-950";
 
     return (
         <div className="relative">
-            <InputComponent
-                type="text"
-                className="w-full px-4 pt-6 pb-2 border rounded-xl transition-all duration-300 outline-none resize-none bg-gray-800/50 border-gray-700 text-white focus:border-blue-500 focus:border-blue-500 focus:bg-gray-800/70"
-                value={value}
-                onChange={({target}) => handleInputChange(input_key, target.value)}
-            />
-            <label className="text-sm absolute left-4 top-2 pointer-events-none origin-left">
-                { label }
+            {textarea ? (
+                <textarea
+                    id={inputKey}
+                    name={inputKey}
+                    rows={6}
+                    required
+                    placeholder={label}
+                    className={`${sharedClasses} resize-none`}
+                    value={value}
+                    onChange={({ target }) => handleInputChange(inputKey, target.value)}
+                />
+            ) : (
+                <input
+                    id={inputKey}
+                    name={inputKey}
+                    type={type}
+                    required
+                    placeholder={label}
+                    className={sharedClasses}
+                    value={value}
+                    onChange={({ target }) => handleInputChange(inputKey, target.value)}
+                />
+            )}
+            <label
+                htmlFor={inputKey}
+                className="pointer-events-none absolute left-4 top-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-500 transition peer-focus:text-cyan-300"
+            >
+                {label}
             </label>
         </div>
-    )
+    );
 }

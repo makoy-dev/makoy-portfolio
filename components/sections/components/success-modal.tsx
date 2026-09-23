@@ -24,7 +24,7 @@ export default function SuccessModal({
                     animate={{ scale: 1, opacity: 1, y: 0 }}
                     exit={{ scale: 0.8, opacity: 0, y: 20 }}
                     transition={{ type: "spring", duration: 0.6 }}
-                    className="relative p-8 rounded-2xl border max-w-sm w-full text-center bg-gray-800 border-gray-700"
+                    className="relative w-full max-w-sm rounded-3xl border border-white/10 bg-slate-900 p-8 text-center shadow-2xl"
                     onClick={e => e.stopPropagation()}
                 >
                     <button
@@ -37,9 +37,9 @@ export default function SuccessModal({
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.2, type: "spring" }}
-                        className="mx-auto w-16 h-16 bg-green rounded-full flex items-center justify-center mb-6"
+                        className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-400/15"
                     >
-                        <CheckCircle size={32} className="text-white" />
+                        <CheckCircle size={32} className="text-emerald-300" />
                     </motion.div>
                     <motion.h3
                         initial={{ opacity: 0, y: 10 }}
@@ -47,7 +47,7 @@ export default function SuccessModal({
                         transition={{ delay: 0.3 }}
                         className="text-2xl font-medium mb-2"
                     >
-                        Message Sent!
+                        Message sent
                     </motion.h3>
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
@@ -55,7 +55,7 @@ export default function SuccessModal({
                         transition={{ delay: 0.4 }}
                         className="text-gray-400 mb-6"
                     >
-                        Thank you for reaching out! I&apos;ll get back to you within 24 hours.
+                        Thanks for reaching out. I&apos;ll get back to you as soon as I can.
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}

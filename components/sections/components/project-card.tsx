@@ -1,109 +1,69 @@
-"use client"
-import { motion } from "framer-motion"
-import { ExternalLink } from "lucide-react";
-import { FiGithub } from "react-icons/fi";
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import type { Project } from "@/lib/data";
 import { cardVariants } from "@/lib/utils";
 
-type Project = {
-    id: number,
-    title: string,
-    description: string,
-    image: string,
-    tags: string[],
-    liveUrl: string,
-    githubUrl: string,
-    featured: boolean,
-    category: string
-};
 export default function ProjectCard({
     project,
     index,
 }: {
     project: Project;
     index: number;
-}) {  
+}) {
+    const href = project.liveUrl ?? project.githubUrl;
 
-    
     return (
-        <motion.div
+        <motion.article
             variants={cardVariants}
-            whileHover={{
-                y: -8,
-                transition: { duration: 0.3, ease: "easeOut" }
-            }}
-            className=""
+            whileHover={{ y: -5 }}
+            className="group relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.035] p-7 transition-colors hover:border-cyan-300/25 sm:p-9"
         >
-            <div
-                className="rounded-2xl overflow-hidden border transition-all duration-500 bg-gray-900/50 border-gray-800 hover:border-gray-700 hover:shadow-2xl hover:shadow-blue-500/10 backdrop-blur-sm"
-            >
-                {/* Project Image */}
-                <div className="relative overflow-hidden">
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-
-                    { project.featured && (
-                        <div className="absolute top-4 left-4">
-                            <span className="bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                                Featured
-                            </span>
-                        </div>
-                    ) }
-
-                    <div className="absolute top-4 right-4">
-                        <span
-                            className="text-xs px-3 py-1 rounded-full font-medium bg-gray-800/80 text-gray-300 backdrop-blur-sm">
-                            { project.category }
+            <div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-cyan-300/[0.06] blur-3xl transition group-hover:bg-cyan-300/[0.1]" />
+            <div className="relative">
+                <div className="mb-16 flex items-start justify-between gap-6">
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">
+                            {project.category}
+                        </p>
+                        <p className="mt-3 text-sm text-slate-500">0{index + 1} / Featured</p>
+                    </div>
+                    {href ? (
+                        <a
+                            href={href}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={`Open ${project.title}`}
+                            className="rounded-full border border-white/10 p-3 text-slate-400 transition hover:border-cyan-300/40 hover:text-cyan-300"
+                        >
+                            <ArrowUpRight size={19} />
+                        </a>
+                    ) : (
+                        <span className="rounded-full border border-white/[0.08] px-3 py-1.5 text-xs text-slate-500">
+                            {project.outcome}
                         </span>
-                    </div>
-
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center space-x-4"
-                    >
-                        <motion.a
-                            href={project.liveUrl}
-                            initial={{ y: 20, opacity: 0.5 }}
-                            whileHover={{ y: 0, opacity: 1, scale: 1.05 }}
-                            transition={{ duration: 0.3, delay: 0.1 }}
-                            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-colors"
-                        >
-                            <ExternalLink size={16} />
-                            <span>Live Demo</span>
-                        </motion.a>
-                        <motion.a
-                            href={project.githubUrl}
-                            initial={{ y: 20, opacity: 0.5 }}
-                            whileHover={{ y: 0, opacity: 1, scale: 1.05 }}
-                            transition={{ duration: 0.3, delay: 0.2 }}
-                            className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full flex items-center space-x-2 text-sm font-medium transition-all"
-                        >
-                            <FiGithub size={16} />
-                            <span>GitHub</span>
-                        </motion.a>
-                    </motion.div>
+                    )}
                 </div>
-                {/* Project Content */}
-                <div className="p-6">
-                    <h3 className="text-xl font-medium mb-3 group-hover:text-blue-500 transition-colors">{ project.title }</h3>
-                    <p className="text-sm leading-relaxed mb-4 text-gray-400">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag: string, tagIndex: number) => (
-                            <span
-                                key={tagIndex}
-                                className="text-xs px-3 py-1 rounded-full bg-gray-800 text-gray-300"
-                            >
-                                { tag }
-                            </span>
 
-                        ))}
-                    </div>
+                <h3 className="text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">
+                    {project.title}
+                </h3>
+                <p className="mt-5 max-w-xl text-base leading-7 text-slate-400">
+                    {project.description}
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                        <span
+                            key={tag}
+                            className="rounded-full border border-white/[0.08] bg-slate-950/40 px-3 py-1.5 text-xs font-medium text-slate-300"
+                        >
+                            {tag}
+                        </span>
+                    ))}
                 </div>
             </div>
-        </motion.div>
-    )
+        </motion.article>
+    );
 }
