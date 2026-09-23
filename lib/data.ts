@@ -159,11 +159,18 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE = [
     {
-        period: "2024 — Present",
+        period: "Nov 2025 — Present",
+        role: "Full-stack Developer",
+        company: "iZone Software Limited",
+        description:
+            "Developing and maintaining full-stack web applications, delivering new features, resolving production issues, and improving existing workflows using PHP, Laravel, React, Twig, JavaScript, and MySQL.",
+    },
+    {
+        period: "2024 — Oct 2025",
         role: "Full-stack Developer",
         company: "Tyme Global Technologies, Inc.",
         description:
-            "Developing, maintaining, and improving full-stack products with React, Next.js, Laravel, Tailwind CSS, and PostgreSQL.",
+            "Developed, maintained, and improved full-stack products with React, Next.js, Laravel, Tailwind CSS, and PostgreSQL.",
     },
     {
         period: "2021 — 2022",
