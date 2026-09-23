@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/data";
@@ -18,32 +20,48 @@ export default function ProjectCard({
         <motion.article
             variants={cardVariants}
             whileHover={{ y: -5 }}
-            className="group relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.035] p-7 transition-colors hover:border-cyan-300/25 sm:p-9"
+            className="group relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.035] transition-colors hover:border-cyan-300/25"
         >
             <div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-cyan-300/[0.06] blur-3xl transition group-hover:bg-cyan-300/[0.1]" />
-            <div className="relative">
-                <div className="mb-16 flex items-start justify-between gap-6">
+            <Link
+                href={`/projects/${project.slug}`}
+                className="relative block aspect-[16/8] overflow-hidden border-b border-white/[0.08] bg-slate-900"
+                aria-label={`View ${project.title} case study`}
+            >
+                <Image
+                    src={project.coverImage}
+                    alt={`${project.title} dashboard`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 80vw"
+                    className="object-cover object-top transition duration-700 group-hover:scale-[1.025]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
+            </Link>
+
+            <div className="relative p-7 sm:p-9">
+                <div className="mb-10 flex items-start justify-between gap-6">
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">
                             {project.category}
                         </p>
                         <p className="mt-3 text-sm text-slate-500">0{index + 1} / Featured</p>
                     </div>
-                    {href ? (
-                        <a
-                            href={href}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label={`Open ${project.title}`}
-                            className="rounded-full border border-white/10 p-3 text-slate-400 transition hover:border-cyan-300/40 hover:text-cyan-300"
-                        >
-                            <ArrowUpRight size={19} />
-                        </a>
-                    ) : (
+                    <div className="flex items-center gap-2">
                         <span className="rounded-full border border-white/[0.08] px-3 py-1.5 text-xs text-slate-500">
                             {project.outcome}
                         </span>
-                    )}
+                        {href && (
+                            <a
+                                href={href}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={`Open live ${project.title}`}
+                                className="rounded-full border border-white/10 p-3 text-slate-400 transition hover:border-cyan-300/40 hover:text-cyan-300"
+                            >
+                                <ArrowUpRight size={19} />
+                            </a>
+                        )}
+                    </div>
                 </div>
 
                 <h3 className="text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">
@@ -63,6 +81,13 @@ export default function ProjectCard({
                         </span>
                     ))}
                 </div>
+
+                <Link
+                    href={`/projects/${project.slug}`}
+                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200"
+                >
+                    View project <ArrowUpRight size={17} />
+                </Link>
             </div>
         </motion.article>
     );

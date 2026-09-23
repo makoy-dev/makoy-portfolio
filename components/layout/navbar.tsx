@@ -10,8 +10,14 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navigate = (sectionId: string) => {
-        scrollToSection(sectionId);
         setIsMenuOpen(false);
+
+        if (document.getElementById(sectionId)) {
+            scrollToSection(sectionId);
+            return;
+        }
+
+        window.location.href = `/#${sectionId}`;
     };
 
     return (

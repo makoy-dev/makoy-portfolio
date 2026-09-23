@@ -24,7 +24,7 @@ export default function Projects() {
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={containerVariants}
-                    className="mt-14 grid gap-6 lg:grid-cols-2"
+                    className="mt-14 grid gap-6"
                 >
                     {PROJECTS.map((project, index) => (
                         <ProjectCard key={project.id} project={project} index={index} />
@@ -32,8 +32,8 @@ export default function Projects() {
                 </motion.div>
 
                 <p className="mt-8 max-w-2xl text-sm leading-6 text-slate-500">
-                    Detailed project write-ups are being prepared. Each case study will cover
-                    the problem, decisions, implementation, and outcome—not just screenshots.
+                    Explore the full case study for a closer look at the product context,
+                    workflow decisions, and connected operational screens.
                 </p>
             </div>
         </section>

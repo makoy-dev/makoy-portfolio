@@ -63,11 +63,19 @@ export const TECH_STACK = [
 
 export type Project = {
     id: number;
+    slug: string;
     title: string;
     description: string;
     tags: string[];
     category: string;
     outcome: string;
+    coverImage: string;
+    screenshots: {
+        src: string;
+        title: string;
+        alt: string;
+        caption: string;
+    }[];
     liveUrl?: string;
     githubUrl?: string;
 };
@@ -75,21 +83,77 @@ export type Project = {
 export const PROJECTS: Project[] = [
     {
         id: 1,
-        title: "E-Commerce Platform",
+        slug: "acosa-accounting-app",
+        title: "ACOSA Accounting App",
         description:
-            "A full-stack commerce experience focused on product discovery, advanced filtering, and a dependable purchase flow.",
-        tags: ["React", "Tailwind CSS", "Laravel"],
-        category: "Full-stack application",
-        outcome: "Case study in progress",
-    },
-    {
-        id: 2,
-        title: "Task Management App",
-        description:
-            "A collaborative workspace designed to make planning, ownership, and day-to-day project progress easier to follow.",
-        tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-        category: "Productivity platform",
-        outcome: "Case study in progress",
+            "A custom accounting operations platform commissioned by Acosa Accounting Office to connect client management, compliance monitoring, role-based workflows, retainers, and reporting.",
+        tags: ["Laravel", "React", "Tailwind CSS", "REST APIs"],
+        category: "Business operations platform",
+        outcome: "Live project",
+        liveUrl: "https://acosa-app.on-forge.com/",
+        coverImage: "/images/projects/acosa/dashboard.png",
+        screenshots: [
+            {
+                src: "/images/projects/acosa/dashboard.png",
+                title: "Action Center",
+                alt: "ACOSA Accounting App action center dashboard",
+                caption: "A prioritized work queue surfaces urgent compliance, document, payment, and billing actions.",
+            },
+            {
+                src: "/images/projects/acosa/client-masterlist.png",
+                title: "Client Masterlist",
+                alt: "ACOSA Accounting App client masterlist",
+                caption: "A consolidated client workspace with operational filters, assignments, capacity, and fee context.",
+            },
+            {
+                src: "/images/projects/acosa/monitoring.png",
+                title: "Billing Monitoring",
+                alt: "ACOSA Accounting App billing monitoring workspace",
+                caption: "A spreadsheet-style monitoring surface supports recurring filing periods and per-row status updates.",
+            },
+            {
+                src: "/images/projects/acosa/documents.png",
+                title: "Document Management",
+                alt: "ACOSA Accounting App document management workspace",
+                caption: "Documents are organized by business, compliance requirement, review state, and version.",
+            },
+            {
+                src: "/images/projects/acosa/payment-approvals.png",
+                title: "Payment Approvals",
+                alt: "ACOSA Accounting App payment approvals workspace",
+                caption: "A focused review queue helps reconcile submitted payments and surface exceptions.",
+            },
+            {
+                src: "/images/projects/acosa/reports.png",
+                title: "Operational Reports",
+                alt: "ACOSA Accounting App revenue reporting dashboard",
+                caption: "Configurable reports turn accounting activity into readable operational and financial summaries.",
+            },
+            {
+                src: "/images/projects/acosa/user-management.png",
+                title: "User Management",
+                alt: "ACOSA Accounting App user management screen",
+                caption: "Administrators can manage staff and client accounts, roles, access, and account status.",
+            },
+            {
+                src: "/images/projects/acosa/data-management.png",
+                title: "Data Management",
+                alt: "ACOSA Accounting App data management settings",
+                caption: "Reusable reference data keeps client, task, workload, and compliance configuration consistent.",
+            },
+            {
+                src: "/images/projects/acosa/tax-periods.png",
+                title: "Tax Period Configuration",
+                alt: "ACOSA Accounting App tax period settings",
+                caption: "Annual filing periods and deadlines can be generated and managed from one administrative workspace.",
+            },
+            {
+                src: "/images/projects/acosa/audit-logs.png",
+                title: "Audit Log",
+                alt: "ACOSA Accounting App audit log",
+                caption: "Immutable activity history provides traceability across security, client, and compliance events.",
+            },
+        ],
     },
 ];
 
